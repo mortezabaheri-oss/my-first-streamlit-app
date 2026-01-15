@@ -36,7 +36,7 @@ top_growth = data2.groupby(['country','year'])['population_growth_rate'].mean().
 fig = px.bar(top_growth, 
              x='country', y='population_growth_rate',
              title=f'Top Countries by Population Growth Rate in {input_year}',
-             width = 700, height= 800,
+             width = 700, height= 700,
              labels={'population_growth_rate':'population growth rate'})
 fig.update_layout(
     xaxis={'categoryorder':'total descending'})
@@ -108,4 +108,5 @@ fig = px.choropleth(locations=data2['country'],
                     labels={"color": "population density"},
                     title=f'population density in {input_year}'
                    )
+
 st.plotly_chart(fig, use_container_width=True)
